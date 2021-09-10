@@ -116,7 +116,6 @@ func main() {
 		fmt.Println("You need a minimum of 3 sides for a figure")
 		//return 0
 
-		
 		os.Exit(3)
 	}
     for x := 0; x < sides; x++ {
