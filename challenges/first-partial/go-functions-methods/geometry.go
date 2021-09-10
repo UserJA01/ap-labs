@@ -109,17 +109,25 @@ func main() {
     //Path[1] = Point{5, 5}
     rand.Seed(time.Now().UnixNano())
     Path := []Point{}
-    sides, err := strconv.Atoi(os.Args[1])
-    if err == nil{}
+    
+    
 
-	if sides < 3{
+
+	if(len(os.Args) < 2){
+		fmt.Println("Please write down the number of sides for the figure")
+		return
+	}
+	sides, err := strconv.Atoi(os.Args[1])
+	if err != nil{
+		fmt.Println("Your input needs to be a number")
+		return
+
+	}
+
+	if sides < 3 {
 		fmt.Println("You need a minimum of 3 sides for a figure")
-		//return 0
-
-
-
-		
-		os.Exit(3)
+		return
+		//os.Exit(3)
 	}
     for x := 0; x < sides; x++ {
         
@@ -138,7 +146,7 @@ func main() {
             }            
         }
 
-        if(x >= 3){
+        /*if(x >= 3){
             flag := true
             for flag {
                 t1 := Line{p1: Path[x-1], p2: n}
@@ -154,7 +162,7 @@ func main() {
                 }
                 flag = false
             }
-        }
+        }*/
 
         //fmt.Println("#",x," Random " , r , " HAH ", r2)
         //fmt.Println("#", x , " Random " , r , " ", r2)
